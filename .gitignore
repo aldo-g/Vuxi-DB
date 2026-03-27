@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# TypeScript build output
+dist/
+build/
+*.tsbuildinfo
+
+# Prisma
+# Keep migrations/ and schema.prisma, but ignore local dev database
+prisma/*.db
+prisma/*.db-journal
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temp files
+tmp/
+temp/
