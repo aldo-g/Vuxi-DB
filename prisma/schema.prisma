@@ -66,6 +66,31 @@ model AnalyzedPage {
   screenshots Screenshot[] // This now links to the new Screenshot table
 }
 
+model CaptureJob {
+  id          String   @id  // UUID from the service
+  baseUrl     String
+  status      String
+  progress    Json?
+  urlDiscovery Json?
+  results     Json?
+  error       String?
+  errorType   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AnalysisJob {
+  id           String   @id  // UUID from the service
+  captureJobId String
+  status       String
+  progress     Json?
+  analysisData Json?
+  results      Json?
+  error        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
 // UPDATED: Enhanced Screenshot model to capture payload data
 model Screenshot {
   id             Int      @id @default(autoincrement())
